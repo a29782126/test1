@@ -1,0 +1,58 @@
+尋找 git : git
+正在使用來自 git 的 git 2.20.1
+> git rev-parse --git-dir
+Open repository: /home/soic/moxa-dio-control
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/soic/moxa-dio-control/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git rev-parse --git-dir
+Open repository: /home/soic/moxa-gpio-control
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/soic/moxa-gpio-control/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git rev-parse --git-dir
+Open repository: /home/soic/moxa-uart-control
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/soic/moxa-uart-control/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :example/dio-test.cpp
+> git ls-files --stage -- /home/soic/moxa-dio-control/example/dio-test.cpp
+> git show --textconv :example/Makefile
+> git ls-files --stage -- /home/soic/moxa-dio-control/example/Makefile
+> git cat-file -s fb2c1e08f8b42924d5877583688deede19b728b9
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/soic/moxa-dio-control/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :example/dio-test.cpp
+> git ls-files --stage -- /home/soic/moxa-dio-control/example/dio-test.cpp
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin

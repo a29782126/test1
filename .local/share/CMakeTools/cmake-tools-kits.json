@@ -1,0 +1,42 @@
+[
+  {
+    "name": "GCC 8.3.0",
+    "compilers": {
+      "C": "/usr/bin/gcc-8",
+      "CXX": "/usr/bin/g++-8"
+    }
+  },
+  {
+    "name": "GCC for arm-linux-gnueabihf 6.3.0",
+    "compilers": {
+      "C": "/usr/local/arm-linux-gnueabihf-6.3/usr/bin/arm-linux-gnueabihf-gcc-6",
+      "CXX": "/usr/local/arm-linux-gnueabihf-6.3/usr/bin/arm-linux-gnueabihf-g++-6"
+    }
+  },
+  {
+    "name": "GCC for arm-linux-gnueabihf 8.3.0",
+    "compilers": {
+      "C": "/usr/bin/arm-linux-gnueabihf-gcc-8",
+      "CXX": "/usr/bin/arm-linux-gnueabihf-g++-8"
+    }
+  },
+  {
+    "name": "GCC for c89 8.3.0",
+    "compilers": {
+      "C": "/usr/bin/c89-gcc"
+    }
+  },
+  {
+    "name": "GCC for c99 8.3.0",
+    "compilers": {
+      "C": "/usr/bin/c99-gcc"
+    }
+  },
+  {
+    "name": "GCC for x86_64-linux-gnu 8.3.0",
+    "compilers": {
+      "C": "/usr/bin/x86_64-linux-gnu-gcc-8",
+      "CXX": "/usr/bin/x86_64-linux-gnu-g++-8"
+    }
+  }
+]

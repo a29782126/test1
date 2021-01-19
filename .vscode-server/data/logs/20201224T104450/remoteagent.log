@@ -1,0 +1,19 @@
+[2020-12-24 10:44:50.494] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2020-12-24 10:44:50.494] [remoteagent] [info] Extension host agent started.
+[2020-12-24 10:44:50.630] [remoteagent] [info] Deleted from disk ms-ceintl.vscode-language-pack-zh-hant /home/soic/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hant-1.51.2
+[2020-12-24 10:44:51.153] [remoteagent] [info] [::1][6108ecab][ManagementConnection] New connection established.
+[2020-12-24 10:44:51.167] [remoteagent] [info] Listing 0 persistent terminals, 0 total terminals
+[2020-12-24 10:44:51.372] [remoteagent] [info] [::1][6b5f84da][ExtensionHostConnection] New connection established.
+[2020-12-24 10:44:51.391] [remoteagent] [info] [::1][6b5f84da][ExtensionHostConnection] <40> Launched Extension Host Process.
+[2020-12-24 17:29:05.059] [remoteagent] [info] [::1][6108ecab][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2020-12-24 17:29:06.122] [remoteagent] [info] [::1][6b5f84da][ExtensionHostConnection] <40> Extension Host Process exited with code: 0, signal: null.
+[2020-12-24 17:29:06.123] [remoteagent] [info] Last EH closed, waiting before shutting down

@@ -1,0 +1,45 @@
+#编译配置,使能为1
+CONFIG_MODBUS_BUILD = 1
+
+#当前路径
+CUR_DIR := $(shell pwd)
+
+#libmodbus目录
+LIBMODBUS_DIR := $(CUR_DIR)/../libmodbus
+
+# 头文件路径
+INCLUDE :=
+INCLUDE += -I$(CUR_DIR)/../include/
+ifeq ($(CONFIG_MODBUS_BUILD), 1)
+INCLUDE += -I$(LIBMODBUS_DIR)/include/modbus/
+endif
+
+#C编译器的选项
+CFLAGS :=
+CFLAGS += -g -Wall
+CFLAGS += -std=gnu99
+CFLAGS += $(INCLUDE)
+
+
+#库文件参数
+LDFLAGS :=
+#libmodbus共享库链接
+#LDFLAGS += -L$(LIBMODBUS_DIR)/lib
+#libmodbus静态库链接
+ifeq ($(CONFIG_MODBUS_BUILD), 1)
+LDFLAGS += $(LIBMODBUS_DIR)/lib/libmodbus.a
+endif
+
+
+SRCS += modbus_test.c
+OBJS += modbus_test.o
+BINS += modbus_test
+
+
+all:$(OBJS) $(BINS) 
+
+$(OBJS):%.o:%.c
+    $(CC) -c $(CFLAGS) $^ -o $(OBJ_DIR)/$@
+
+$(BINS):$(OBJS)
+    $(CC) -o $(BIN_DIR)/$@ $(OBJ_DIR)/$^ $(LDFLAGS)

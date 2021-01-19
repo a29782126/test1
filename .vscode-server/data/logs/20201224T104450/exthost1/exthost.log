@@ -1,0 +1,24 @@
+[2020-12-24 10:44:52.250] [exthost] [info] extension host started
+[2020-12-24 10:44:52.386] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false,"extensionId":{"value":"ms-vscode.cpptools","_lower":"ms-vscode.cpptools"},"activationEvent":"onLanguage:c"}
+[2020-12-24 10:44:52.387] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.1.3/dist/main
+[2020-12-24 10:44:52.516] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-12-24 10:44:52.516] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/debug-auto-launch/dist/extension
+[2020-12-24 10:44:52.523] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-12-24 10:44:52.523] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/emmet/dist/node/emmetNodeMain
+[2020-12-24 10:44:52.588] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-12-24 10:44:52.588] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/git/dist/main
+[2020-12-24 10:44:52.657] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-12-24 10:44:52.657] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/merge-conflict/dist/mergeConflictMain
+[2020-12-24 10:44:52.664] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-12-24 10:44:52.664] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/search-result/dist/extension.js
+[2020-12-24 10:44:53.336] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-12-24 10:44:53.336] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/github/dist/extension.js
+[2020-12-24 10:44:53.355] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2020-12-24 10:44:53.355] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/ms-vscode.js-debug/src/extension.js
+[2020-12-24 10:44:53.601] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cmake-tools {"startup":true,"extensionId":{"value":"ms-vscode.cmake-tools","_lower":"ms-vscode.cmake-tools"},"activationEvent":"workspaceContains:**/CMakeLists.txt"}
+[2020-12-24 10:44:53.601] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/extensions/ms-vscode.cmake-tools-1.5.3/dist/main
+[2020-12-24 10:44:54.571] [exthost] [info] eager extensions activated
+[2020-12-24 14:18:22.471] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:markdown"}
+[2020-12-24 14:18:22.471] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/extension-editing/dist/extensionEditingMain
+[2020-12-24 14:18:22.519] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"onLanguage:markdown"}
+[2020-12-24 14:18:22.519] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/markdown-language-features/dist/extension
