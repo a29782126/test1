@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"remoteAuthority": "wsl+Debian",
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}
