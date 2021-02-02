@@ -28,7 +28,6 @@ int CANPORT_DEF(int can_port)
       strcpy(ifr.ifr_name, ifname1); 
     }
  
-    
     ioctl(s, SIOCGIFINDEX, &ifr); //指定 can 裝置
     addr.can_family = AF_CAN;
     addr.can_ifindex = ifr.ifr_ifindex;
@@ -69,7 +68,6 @@ void *canwrite0(void *args)
         frame.data[6] = 0xFF;
         frame.data[7] = 0xFF;
         ret = write(pstPara->CANPort_0, &frame, sizeof(struct can_frame));        
-
 
         usleep(99900);
     }

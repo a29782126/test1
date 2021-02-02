@@ -1,0 +1,13 @@
+[2021-01-28 15:20:31.899] [exthost] [info] extension host started
+[2021-01-28 15:20:32.006] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-01-28 15:20:32.007] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/debug-auto-launch/dist/extension
+[2021-01-28 15:20:32.021] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2021-01-28 15:20:32.021] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/emmet/dist/node/emmetNodeMain
+[2021-01-28 15:20:32.094] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-01-28 15:20:32.094] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/git/dist/main
+[2021-01-28 15:20:32.211] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2021-01-28 15:20:32.211] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/merge-conflict/dist/mergeConflictMain
+[2021-01-28 15:20:32.215] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2021-01-28 15:20:32.215] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/search-result/dist/extension.js
+[2021-01-28 15:20:32.231] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":true,"extensionId":{"value":"ms-vscode.cpptools","_lower":"ms-vscode.cpptools"},"activationEvent":"*"}
+[2021-01-28 15:20:32.231] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.2.0-insiders3/dist/main

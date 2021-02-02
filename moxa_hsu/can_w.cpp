@@ -26,7 +26,6 @@ int main()
     //擷取程式起始時間
     start = get_now_time();
   
-
     for(int i = 0; i<100; i++)
     {
         usleep(99000);        

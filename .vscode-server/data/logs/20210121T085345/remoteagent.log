@@ -1,0 +1,35 @@
+[2021-01-21 08:53:45.976] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-01-21 08:53:45.976] [remoteagent] [info] Extension host agent started.
+[2021-01-21 08:53:46.335] [remoteagent] [info] [::ffff:172.18.96.1][8f4424f5][ManagementConnection] New connection established.
+[2021-01-21 08:53:46.357] [remoteagent] [info] [::ffff:172.18.96.1][6c92ecf9][ExtensionHostConnection] New connection established.
+[2021-01-21 08:53:46.372] [remoteagent] [info] Listing 0 persistent terminals, 0 total terminals
+[2021-01-21 08:53:46.462] [remoteagent] [info] [::ffff:172.18.96.1][6c92ecf9][ExtensionHostConnection] <40> Launched Extension Host Process.
+[2021-01-21 09:01:22.835] [remoteagent] [info] [::ffff:172.18.96.1][8f4424f5][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-01-21 09:01:26.538] [remoteagent] [info] [::ffff:172.18.96.1][8f4424f5][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2021-01-21 09:01:26.538] [remoteagent] [info] [::ffff:172.18.96.1][8f4424f5][ManagementConnection] The client has reconnected.
+[2021-01-21 15:25:55.526] [remoteagent] [info] Installing the extension: ms-vscode.cpptools
+[2021-01-21 15:25:56.983] [remoteagent] [info] Extracted extension to /home/soic/.vscode-server/extensions/.ms-vscode.cpptools-1.2.0-insiders2: ms-vscode.cpptools
+[2021-01-21 15:25:56.984] [remoteagent] [info] Renamed to /home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.2.0-insiders2
+[2021-01-21 15:25:56.987] [remoteagent] [info] Installation completed. ms-vscode.cpptools
+[2021-01-21 15:25:56.998] [remoteagent] [info] Successfully installed the extension: ms-vscode.cpptools
+[2021-01-21 15:33:46.010] [remoteagent] [info] [::ffff:172.18.96.1][8f4424f5][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-01-21 15:33:47.052] [remoteagent] [info] [::ffff:172.18.96.1][6c92ecf9][ExtensionHostConnection] <40> Extension Host Process exited with code: 0, signal: null.
+[2021-01-21 15:33:47.053] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-01-21 15:33:47.220] [remoteagent] [info] [::ffff:172.18.96.1][38a9e4be][ExtensionHostConnection] New connection established.
+[2021-01-21 15:33:47.221] [remoteagent] [info] [::ffff:172.18.96.1][757e4873][ManagementConnection] New connection established.
+[2021-01-21 15:33:47.251] [remoteagent] [info] [::ffff:172.18.96.1][38a9e4be][ExtensionHostConnection] <7010> Launched Extension Host Process.
+[2021-01-21 15:33:47.261] [remoteagent] [info] Listing 1 persistent terminals, 1 total terminals
+[2021-01-21 15:38:47.053] [remoteagent] [info] New EH opened, aborting shutdown
+[2021-01-21 15:38:47.261] [remoteagent] [info] The short reconnection grace time of 5m has expired, so the terminal process with pid 58 will be shutdown.
+[2021-01-21 17:26:05.282] [remoteagent] [info] [::ffff:172.18.96.1][757e4873][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-01-21 17:26:06.327] [remoteagent] [info] [::ffff:172.18.96.1][38a9e4be][ExtensionHostConnection] <7010> Extension Host Process exited with code: 0, signal: null.
+[2021-01-21 17:26:06.328] [remoteagent] [info] Last EH closed, waiting before shutting down
