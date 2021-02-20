@@ -498,3 +498,5 @@ git log
 git log --pretty=oneline --abbrev-commit
 git config --list --system 
 scp rs232 moxa@192.168.3.127:~
+make ARCH=5112 EXEC=can_w
+scp can_w moxa@192.168.3.127:~

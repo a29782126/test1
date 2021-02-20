@@ -1,29 +1,30 @@
-2021-02-02T01:43:39.339Z [debug] [main] Safe constructing new CMakeTools instance
-2021-02-02T01:43:39.340Z [debug] [variant] Constructing VariantManager
-2021-02-02T01:43:39.341Z [debug] [main] Constructing new CMakeTools instance
-2021-02-02T01:43:39.341Z [debug] [main] Starting CMakeTools second-phase init
-2021-02-02T01:43:39.623Z [info] [variant] Loaded new set of variants
-2021-02-02T01:43:39.626Z [debug] [main] CMakeTools instance initialization complete.
-2021-02-02T01:43:39.633Z [debug] [kit] Reading kits file /home/soic/.local/share/CMakeTools/cmake-tools-kits.json
-2021-02-02T01:43:39.688Z [info] [kit] Successfully loaded 6 kits from /home/soic/.local/share/CMakeTools/cmake-tools-kits.json
-2021-02-02T01:43:39.720Z [debug] [kit] Not reading non-existent kits file: /home/soic/.vscode/cmake-kits.json
-2021-02-02T01:43:39.807Z [debug] [extension] Configuring workspace on open file:///home/soic
-2021-02-02T01:43:39.809Z [debug] [kitsController] Start selection of kits. Found 8 kits.
-2021-02-02T01:43:39.809Z [debug] [kitsController] Opening kit selection QuickPick
-2021-02-02T01:43:44.814Z [debug] [kitsController] User cancelled Kit selection
-2021-02-02T01:46:06.945Z [debug] [main] Not starting CMake driver: no kits defined
-2021-02-02T01:46:06.946Z [debug] [main] Not starting CMake driver: no kits defined
-2021-02-02T01:46:17.751Z [debug] [main] Not starting CMake driver: no kits defined
-2021-02-02T01:46:17.751Z [debug] [main] Not starting CMake driver: no kits defined
-2021-02-02T01:46:34.320Z [debug] [main] Not starting CMake driver: no kits defined
-2021-02-02T01:46:34.321Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:12:32.091Z [debug] [main] Safe constructing new CMakeTools instance
+2021-02-20T03:12:32.093Z [debug] [variant] Constructing VariantManager
+2021-02-20T03:12:32.095Z [debug] [main] Constructing new CMakeTools instance
+2021-02-20T03:12:32.095Z [debug] [main] Starting CMakeTools second-phase init
+2021-02-20T03:12:32.805Z [info] [variant] Loaded new set of variants
+2021-02-20T03:12:32.807Z [debug] [main] CMakeTools instance initialization complete.
+2021-02-20T03:12:32.813Z [debug] [kit] Reading kits file /home/soic/.local/share/CMakeTools/cmake-tools-kits.json
+2021-02-20T03:12:32.846Z [info] [kit] Successfully loaded 6 kits from /home/soic/.local/share/CMakeTools/cmake-tools-kits.json
+2021-02-20T03:12:32.856Z [debug] [kit] Not reading non-existent kits file: /home/soic/.vscode/cmake-kits.json
+2021-02-20T03:12:32.913Z [debug] [extension] Configuring workspace on open file:///home/soic
+2021-02-20T03:12:32.914Z [debug] [kitsController] Start selection of kits. Found 8 kits.
+2021-02-20T03:12:32.914Z [debug] [kitsController] Opening kit selection QuickPick
+2021-02-20T03:12:53.823Z [debug] [kitsController] User cancelled Kit selection
+2021-02-20T03:29:57.163Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:29:57.164Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:29:59.274Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:29:59.275Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:30:02.704Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-20T03:30:02.705Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T01:55:03.661Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T01:55:03.662Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T05:47:32.676Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T05:47:32.677Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T09:04:57.505Z [debug] [main] Not starting CMake driver: no kits defined
 2021-02-02T09:04:57.505Z [debug] [main] Not starting CMake driver: no kits defined
-2021-01-11T01:19:15.265Z [debug] [main] Not starting CMake driver: no kits defined
+2021-02-03T05:21:38.369Z [debug] [extension] Deactivate CMakeTools
+no kits defined
 2021-01-11T01:19:15.265Z [debug] [main] Not starting CMake driver: no kits defined
 2021-01-11T01:19:29.450Z [debug] [main] Not starting CMake driver: no kits defined
 2021-01-11T01:19:29.451Z [debug] [main] Not starting CMake driver: no kits defined
