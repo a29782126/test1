@@ -169,7 +169,6 @@ void *canread1(void *args)
         printf("\n");     
         
     //============================================================
-
     //每讀10筆資料休息0.1秒
       count_temp++;
       if(count_temp >10)
@@ -178,12 +177,6 @@ void *canread1(void *args)
         usleep(9900); 
       }
 
-      count_temp++;
-      if(count_temp >10)
-      {
-        count_temp = 0;
-        usleep(9900); 
-      }
     }
     pthread_exit(NULL); 
 }

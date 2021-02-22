@@ -45,7 +45,7 @@ int main()
     AllPara.CAN0_write_enable = false;
     AllPara.CAN1_write_enable = false;    
     AllPara.CAN0_read_enable = false;
-    AllPara.CAN1_read_enable = true;      
+    AllPara.CAN1_read_enable = false;      
     printf("Set CAN0 Write = %d from main thread\n", AllPara.CAN0_write_enable);   
     printf("Set CAN1 Write = %d from main thread\n", AllPara.CAN1_write_enable);  
     printf("Set CAN0 Read = %d from main thread\n", AllPara.CAN0_read_enable);   

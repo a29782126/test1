@@ -500,3 +500,10 @@ git config --list --system
 scp rs232 moxa@192.168.3.127:~
 make ARCH=5112 EXEC=can_w
 scp can_w moxa@192.168.3.127:~
+make ARCH=5112 EXEC=can_w
+scp can_w moxa@192.168.3.127:~
+make ARCH=5112 EXEC=can_w
+scp can_w moxa@192.168.3.127:~
+git commit
+git push
+git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative
