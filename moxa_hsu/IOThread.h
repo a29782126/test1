@@ -150,6 +150,7 @@ void *canread0(void *args)
 void *canread1(void *args)
 {
     printf("CAN1 read ready！\n");
+  
   	PCAN_PARA pstPara = (PCAN_PARA) args;
     struct can_frame frame;
     int ret, count_temp;
@@ -186,5 +187,3 @@ void *canread1(void *args)
     }
     pthread_exit(NULL); 
 }
-
-
