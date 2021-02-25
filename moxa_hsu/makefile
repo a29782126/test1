@@ -8,8 +8,8 @@ ifeq ($(ARCH),5112)
 	LIBS=/usr/local/lib/
 
 $(EXEC): $(EXEC).cpp
-	$(CC) $(CFLAGS) -o $(EXEC) $(EXEC).cpp $(LIBS)libmxio.a $(PTHREAD_LIB)
-	$(CC) $(CFLAGS) -o $(EXEC)so $(EXEC).cpp $(LIBS)libmxio.so $(PTHREAD_LIB)
+	$(CC) $(CFLAGS) -o $(EXEC) $(EXEC).cpp $(LIBS)libmxio.a $(PTHREAD_LIB) -lmx_dio_ctl
+	$(CC) $(CFLAGS) -o $(EXEC)so $(EXEC).cpp $(LIBS)libmxio.so $(PTHREAD_LIB) -lmx_dio_ctl
 endif
 
 ################# UC-5112 Series #############
