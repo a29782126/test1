@@ -507,3 +507,7 @@ scp can_w moxa@192.168.3.127:~
 git commit
 git push
 git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative
+make ARCH=5112 EXEC=charger_w
+scp charger_w moxa@192.168.3.127:~
+make ARCH=5112 EXEC=charger_w
+scp charger_w moxa@192.168.3.127:~

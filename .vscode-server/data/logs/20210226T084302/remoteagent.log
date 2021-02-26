@@ -1,0 +1,21 @@
+[2021-02-26 08:43:02.146] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-02-26 08:43:02.146] [remoteagent] [info] Extension host agent started.
+[2021-02-26 08:43:04.049] [remoteagent] [info] [::ffff:172.25.160.1][f3c8d455][ManagementConnection] New connection established.
+[2021-02-26 08:43:04.051] [remoteagent] [info] [::ffff:172.25.160.1][b11950d4][ExtensionHostConnection] New connection established.
+[2021-02-26 08:43:04.149] [remoteagent] [info] [::ffff:172.25.160.1][b11950d4][ExtensionHostConnection] <40> Launched Extension Host Process.
+[2021-02-26 08:44:01.355] [remoteagent] [info] [::ffff:172.25.160.1][f3c8d455][ManagementConnection] The client has reconnected.
+[2021-02-26 08:44:01.369] [remoteagent] [info] [::ffff:172.25.160.1][b11950d4][ExtensionHostConnection] The client has reconnected.
+[2021-02-26 09:43:16.669] [remoteagent] [info] Installing the extension: ms-vscode.cpptools
+[2021-02-26 09:43:17.996] [remoteagent] [info] Extracted extension to /home/soic/.vscode-server/extensions/.ms-vscode.cpptools-1.2.2: ms-vscode.cpptools
+[2021-02-26 09:43:17.997] [remoteagent] [info] Renamed to /home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.2.2
+[2021-02-26 09:43:17.999] [remoteagent] [info] Installation completed. ms-vscode.cpptools
+[2021-02-26 09:43:18.010] [remoteagent] [info] Successfully installed the extension: ms-vscode.cpptools

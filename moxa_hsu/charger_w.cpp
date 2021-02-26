@@ -9,7 +9,6 @@ int main()
     int do_tmp;
     int di_tmp;
 
-
     //時間變數宣告
     double start, end;
     double time_used;
@@ -53,8 +52,6 @@ int main()
         printf(" DI: %2d", AllPara.io1242_di);
         printf("\n"); 
 
-
-
         do_tmp = AllPara.do_state[0];         
         AllPara.do_state[0] = AllPara.do_state[1];      
         AllPara.do_state[1] = AllPara.do_state[2];  
@@ -63,11 +60,8 @@ int main()
 
         AllPara.io1242_do = AllPara.do_state[0] + AllPara.do_state[1] * 2 + AllPara.do_state[2] * 4 + AllPara.do_state[3] * 8;
 
-
-   
         usleep(990000);  
     }
-
 
     //讓所有執行緒的執行旗標設定為false
     AllPara.CAN0_write_enable = false;
