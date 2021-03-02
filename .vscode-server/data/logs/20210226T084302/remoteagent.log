@@ -34,3 +34,4 @@
 [2021-03-02 08:49:42.855] [remoteagent] [info] Terminal layout retrieved: [1]
 [2021-03-02 08:49:44.492] [remoteagent] [info] Replaying 980 chars and 12 size events.
 [2021-03-02 08:54:39.857] [remoteagent] [info] [::ffff:172.25.160.1][8cb9847b][ExtensionHostConnection] <28746> Extension Host Process exited with code: 0, signal: null.
+[2021-03-02 09:05:35.485] [remoteagent] [info] [::ffff:172.25.160.1][1e44ecde][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
