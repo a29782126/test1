@@ -24,7 +24,7 @@ void *say_hello0(void *args)
 }
 void *say_hello1(void *args)
 {
-   printf("Hello 1！\n");
+    printf("Hello 1！\n");
     return 0;
 }
 void *say_hello2(void *args)
@@ -43,7 +43,7 @@ int main(void)
     pthread_create(&tids[1], NULL, say_hello1, NULL);
 
     pthread_create(&tids[2], NULL, say_hello2, NULL);
- int iRet;                        //stored return code
+    int iRet;                        //stored return code
     int iHandle[DEVICE_COUNT] = {0}; //stored handle
     char RetString[64];
     char IPAddress[DEVICE_COUNT][16] = {'\0'};
@@ -86,7 +86,7 @@ int main(void)
         iRet = MXIO_GetModuleType(iHandle[i], //the handle for a connection
                                   0,          //unused
                                   &wType[i]); //module type
-      /*  CheckErr(iRet, (char *)"MXIO_GetModuleType");
+                                              /*  CheckErr(iRet, (char *)"MXIO_GetModuleType");
         printf("Module Type : E%X ***********************\r\n", wType[i]);*/
 
         //=========================================================================
@@ -129,9 +129,6 @@ int main(void)
             }
         }
     }
-
-
-
 
     //等各个线程退出后，进程才结束，否则进程强制结束了，线程可能还没反应过来；
     pthread_exit(NULL);

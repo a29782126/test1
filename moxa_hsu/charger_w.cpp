@@ -15,7 +15,7 @@ int main()
 
     CAN_PARA AllPara;
     AllPara.CAN0_write_enable = true;
-    AllPara.CAN1_write_enable = true;   
+    AllPara.CAN1_write_enable = true;  
     AllPara.CAN0_read_enable = true;
     AllPara.CAN1_read_enable = true;  
     AllPara.DIO_moxa5112_enable = true; 
