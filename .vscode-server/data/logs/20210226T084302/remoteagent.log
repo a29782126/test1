@@ -35,3 +35,8 @@
 [2021-03-02 08:49:44.492] [remoteagent] [info] Replaying 980 chars and 12 size events.
 [2021-03-02 08:54:39.857] [remoteagent] [info] [::ffff:172.25.160.1][8cb9847b][ExtensionHostConnection] <28746> Extension Host Process exited with code: 0, signal: null.
 [2021-03-02 09:05:35.485] [remoteagent] [info] [::ffff:172.25.160.1][1e44ecde][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-03-02 12:05:35.485] [remoteagent] [info] [::ffff:172.25.160.1][1e44ecde][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+[2021-03-03 08:36:50.221] [remoteagent] [info] [::ffff:172.25.160.1][fc8fe0bd][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-03-03 11:20:06.136] [remoteagent] [info] [::ffff:172.25.160.1][d1568237][ExtensionHostConnection] <5088> Extension Host Process exited with code: 0, signal: null.
+[2021-03-03 11:20:06.137] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-03-03 11:25:06.137] [remoteagent] [info] Last EH closed, shutting down
