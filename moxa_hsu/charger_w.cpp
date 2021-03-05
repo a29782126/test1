@@ -12,7 +12,7 @@ int main()
     //時間變數宣告
     double start, end;
     double time_used;
-
+ 
     CAN_PARA AllPara;
     AllPara.CAN0_write_enable = true;
     AllPara.CAN1_write_enable = true;  
@@ -37,7 +37,7 @@ int main()
     //擷取程式起始時間
     start = get_now_time();
     usleep(990000);     
-
+ 
     for(int i = 0; i<100; i++)
     {       
         //擷取目前時間       
@@ -51,7 +51,7 @@ int main()
         for (int j = 0; j < 4; j++) printf(" %05.3f", AllPara.io1242_AI[j]);
         printf(" DI: %2d", AllPara.io1242_di);
         printf("\n"); 
-
+ 
         do_tmp = AllPara.do_state[0];         
         AllPara.do_state[0] = AllPara.do_state[1];      
         AllPara.do_state[1] = AllPara.do_state[2];  
@@ -87,6 +87,6 @@ int main()
     pthread_join(tids[4], NULL);
     pthread_join(tids[5], NULL);
     MXEIO_Exit();      
-
+ 
     return 0;
 }

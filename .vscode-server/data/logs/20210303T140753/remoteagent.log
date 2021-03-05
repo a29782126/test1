@@ -13,3 +13,11 @@
 [2021-03-03 14:07:54.433] [remoteagent] [info] [::1][bd38a6d0][ExtensionHostConnection] New connection established.
 [2021-03-03 14:07:54.454] [remoteagent] [info] [::1][41fe2421][ManagementConnection] New connection established.
 [2021-03-03 14:07:54.504] [remoteagent] [info] [::1][bd38a6d0][ExtensionHostConnection] <40> Launched Extension Host Process.
+[2021-03-04 09:28:15.300] [remoteagent] [info] [::1][a5f3bd20][ExtensionHostConnection] New connection established.
+[2021-03-04 09:28:15.364] [remoteagent] [info] [::1][a5f3bd20][ExtensionHostConnection] <8661> Launched Extension Host Process.
+[2021-03-04 09:28:15.366] [remoteagent] [info] [::1][398698b4][ManagementConnection] New connection established.
+[2021-03-04 09:28:15.384] [remoteagent] [info] Terminal layout retrieved: []
+[2021-03-04 09:33:16.387] [remoteagent] [info] [::1][bd38a6d0][ExtensionHostConnection] <40> Extension Host Process exited with code: 0, signal: null.
+[2021-03-04 16:56:06.330] [remoteagent] [info] [::1][398698b4][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-03-04 16:56:07.420] [remoteagent] [info] [::1][a5f3bd20][ExtensionHostConnection] <8661> Extension Host Process exited with code: 0, signal: null.
+[2021-03-04 16:56:07.421] [remoteagent] [info] Last EH closed, waiting before shutting down

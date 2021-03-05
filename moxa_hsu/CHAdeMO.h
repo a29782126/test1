@@ -19,63 +19,6 @@
 #define DEVICE_COUNT 3
 
 #pragma once
-typedef	struct _CAN_PARA
-{
-    bool CAN0_read_enable;
-    bool CAN1_read_enable;
-    bool CAN0_write_enable;
-    bool CAN1_write_enable; 
-    bool DIO_moxa5112_enable;
-    bool io1242_enable;
-    int CANPort_0, CANPort_1;   
-    int time_tmp;
-
-    //#100
-    BYTE MIN_I;    //Minimum charge current
-    WORD MIN_V;    //Minimum battery voltage
-    WORD BAT_MX;   //Maximum battery voltage
-    BYTE TOT_CAP;  //Charged rate reference constant
-
-    //#101
-    BYTE CHG_TM0;   //Maximum charging time (10s unit)
-    BYTE CHG_TM1;   //Maximum charging time (1min unit)
-    BYTE CHG_EST;   //Estimated charging time
-    double TOT_CAP_KW; //Total capacity of traction battery
-
-    //#102
-    BYTE V_PROTOCOL; //CHAdeMO protocol number
-    WORD CHG_MX;     //Target battery voltage
-    BYTE CHG_I;      //Charging current request
-    BYTE REM_CAP;    //State of charge
-
-    //#108
-    BYTE Welding_Detect;//Welding detection
-    WORD LIMIT_V;       //Available output voltage
-    WORD LIMIT_I;       //Available output current
-    WORD LIMIT_VOLT;    //Threshold voltage
-
-    //#109
-    BYTE C_PROTOCOL;    //CHAdeMO protocol number
-    WORD PRE_V;         //Present output voltage
-    WORD PRE_I;         //Present charging current
-    BYTE REM_TM0;       //Remaining charging time(In the unit of 10 s)
-    BYTE REM_TM1;       //Remaining charging time(In the unit of 1 min)
-
-    //#110
-    WORD CHG_I_Ext;     //Charging current request
-
-    //#118
-    WORD LIMIT_I_Ext;   //Available output current
-    WORD PRE_I_Ext;     //Present charging current
-
-    int di_state[4];
-    int do_state[4] = {0};
-
-    int iHandle[DEVICE_COUNT] = {0}; //ioLogicK module handle 
-    double io1242_AI[4] = {0};
-    DWORD io1242_di;
-    DWORD io1242_do;
-} CAN_PARA, *PCAN_PARA;
 
 struct flags
 {
@@ -125,55 +68,15 @@ struct flags
     bool f11803_Reserved;
 
     bool f11850_Operating_condition;
-    bool f11851_Cooling_function_for_charging_cable;
-    bool f11852_Current_limiting_function_for_charging_cable;
-    bool f11853_Cooling_function_for_charging_connector;
-    bool f11854_Current_limiting_function_for_charging_connector;
-    bool f11855_Over_temperature_protection_for_charging_connector;
-    bool f11856_Reliability_design_temperature_monitoring_function;
+    bool f11851_Cooling_function_cable;
+    bool f11852_Current_limiting_function_cable;
+    bool f11853_Cooling_function_connector;
+    bool f11854_Current_limiting_function_connector;
+    bool f11855_Over_temperature_protection;
+    bool f11856_Reliability_design;
 
-    bool f11860_Permission_to_reset_the_maximum_charging_time;
-/*
-    //////////////////////////
-    //#100
-    BYTE MIN_I;    //Minimum charge current
-    WORD MIN_V;    //Minimum battery voltage
-    WORD BAT_MX;   //Maximum battery voltage
-    BYTE TOT_CAP;  //Charged rate reference constant
+    bool f11860_Reset_max_charging_time;
 
-    //#101
-    BYTE CHG_TM0;   //Maximum charging time (10s unit)
-    BYTE CHG_TM1;   //Maximum charging time (1min unit)
-    BYTE CHG_EST;   //Estimated charging time
-    double TOT_CAP_KW; //Total capacity of traction battery
-
-    //#102
-    BYTE V_PROTOCOL; //CHAdeMO protocol number
-    WORD CHG_MX;     //Target battery voltage
-    BYTE CHG_I;      //Charging current request
-    BYTE REM_CAP;    //State of charge
-
-    //#108
-    BYTE Welding_Detect;//Welding detection
-    WORD LIMIT_V;       //Available output voltage
-    WORD LIMIT_I;       //Available output current
-    WORD LIMIT_VOLT;    //Threshold voltage
-
-    //#109
-    BYTE C_PROTOCOL;    //CHAdeMO protocol number
-    WORD PRE_V;         //Present output voltage
-    WORD PRE_I;         //Present charging current
-    BYTE REM_TM0;       //Remaining charging time(In the unit of 10 s)
-    BYTE REM_TM1;       //Remaining charging time(In the unit of 1 min)
-
-    //#110
-    WORD CHG_I_Ext;     //Charging current request
-
-    //#118
-    WORD LIMIT_I_Ext;   //Available output current
-    WORD PRE_I_Ext;     //Present charging current
-*/
-    ///////////////////////////////////////////////////////////
     bool TOT_01_enable;
     bool TOT_04_enable;
     bool TOT_07_enable;
@@ -238,14 +141,14 @@ struct flags
         f11803_Reserved = false;
 
         f11850_Operating_condition = false;
-        f11851_Cooling_function_for_charging_cable = false;
-        f11852_Current_limiting_function_for_charging_cable = false;
-        f11853_Cooling_function_for_charging_connector = false;
-        f11854_Current_limiting_function_for_charging_connector = false;
-        f11855_Over_temperature_protection_for_charging_connector = false;
-        f11856_Reliability_design_temperature_monitoring_function = false;
+        f11851_Cooling_function_cable = false;
+        f11852_Current_limiting_function_cable = false;
+        f11853_Cooling_function_connector = false;
+        f11854_Current_limiting_function_connector = false;
+        f11855_Over_temperature_protection = false;
+        f11856_Reliability_design = false;
 
-        f11860_Permission_to_reset_the_maximum_charging_time = false;
+        f11860_Reset_max_charging_time = false;
 
         /////////////////////////////
 
@@ -267,3 +170,63 @@ struct flags
     }
     ~flags() {}
 };
+
+typedef struct _CAN_PARA
+{
+    bool CAN0_read_enable;
+    bool CAN1_read_enable;
+    bool CAN0_write_enable;
+    bool CAN1_write_enable;
+    bool DIO_moxa5112_enable;
+    bool io1242_enable;
+    int CANPort_0, CANPort_1;
+    int time_tmp;
+
+    flags ff;
+
+    //#100
+    BYTE MIN_I;   //Minimum charge current
+    WORD MIN_V;   //Minimum battery voltage
+    WORD BAT_MX;  //Maximum battery voltage
+    BYTE TOT_CAP; //Charged rate reference constant
+
+    //#101
+    BYTE CHG_TM0;      //Maximum charging time (10s unit)
+    BYTE CHG_TM1;      //Maximum charging time (1min unit)
+    BYTE CHG_EST;      //Estimated charging time
+    double TOT_CAP_KW; //Total capacity of traction battery
+
+    //#102
+    BYTE V_PROTOCOL; //CHAdeMO protocol number
+    WORD CHG_MX;     //Target battery voltage
+    BYTE CHG_I;      //Charging current request
+    BYTE REM_CAP;    //State of charge
+
+    //#108
+    BYTE Welding_Detect; //Welding detection
+    WORD LIMIT_V;        //Available output voltage
+    WORD LIMIT_I;        //Available output current
+    WORD LIMIT_VOLT;     //Threshold voltage
+
+    //#109
+    BYTE C_PROTOCOL; //CHAdeMO protocol number
+    WORD PRE_V;      //Present output voltage
+    WORD PRE_I;      //Present charging current
+    BYTE REM_TM0;    //Remaining charging time(In the unit of 10 s)
+    BYTE REM_TM1;    //Remaining charging time(In the unit of 1 min)
+
+    //#110
+    WORD CHG_I_Ext; //Charging current request
+
+    //#118
+    WORD LIMIT_I_Ext; //Available output current
+    WORD PRE_I_Ext;   //Present charging current
+
+    int di_state[4];
+    int do_state[4] = {0};
+
+    int iHandle[DEVICE_COUNT] = {0}; //ioLogicK module handle
+    double io1242_AI[4] = {0};
+    DWORD io1242_di;
+    DWORD io1242_do;
+} CAN_PARA, *PCAN_PARA;

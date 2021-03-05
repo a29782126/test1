@@ -69,6 +69,7 @@ void *ioLogic1242(void *args)
       iRet = E1K_DI_Reads(pstPara->iHandle[0], bytStartChannel, bytCount, &pstPara->io1242_di);
       iRet = E1K_DO_Writes(pstPara->iHandle[0], bytStartChannel, bytCount, pstPara->io1242_do);
       end = get_now_time();
+
       //計算時間差並列印
       time_used = end - start;
       printf("Time = %f\n", time_used);
@@ -128,26 +129,50 @@ void *canwrite1(void *args)
 
     frame.can_id = 0x108;
     frame.can_dlc = 8;
-    frame.data[0] = pstPara->Welding_Detect;
-    frame.data[1] = pstPara->LIMIT_V & 0xff;
-    frame.data[2] = pstPara->LIMIT_V / 256;
-    frame.data[3] = pstPara->LIMIT_I;
-    frame.data[4] = pstPara->LIMIT_VOLT & 0xff;
-    frame.data[5] = pstPara->LIMIT_VOLT / 256;
-    frame.data[6] = 0xFF;
-    frame.data[7] = 0xFF;
+    frame.data[0] = (char)pstPara->Welding_Detect;
+    frame.data[1] = (char)pstPara->LIMIT_V & 0xff;
+    frame.data[2] = (char)pstPara->LIMIT_V / 256;
+    frame.data[3] = (char)pstPara->LIMIT_I;
+    frame.data[4] = (char)pstPara->LIMIT_VOLT & 0xff;
+    frame.data[5] = (char)pstPara->LIMIT_VOLT / 256;
+    frame.data[6] = (char)0xFF;
+    frame.data[7] = (char)0xFF;
     ret = write(pstPara->CANPort_1, &frame, sizeof(struct can_frame));
 
     frame.can_id = 0x109;
     frame.can_dlc = 8;
-    frame.data[0] = 0x00;
-    frame.data[1] = 0x11;
-    frame.data[2] = 0x00;
-    frame.data[3] = pstPara->time_tmp;
-    frame.data[4] = 0xFF;
-    frame.data[5] = 0xFF;
-    frame.data[6] = 0xFF;
-    frame.data[7] = 0xFF;
+    frame.data[0] = (char)pstPara->C_PROTOCOL;
+    frame.data[1] = (char)(pstPara->PRE_V & 0xff);
+    frame.data[2] = (char)(pstPara->PRE_V / 256);
+    frame.data[3] = (char)pstPara->PRE_I;
+    frame.data[4] = (char)0xFF; //pstPara->ff.f10940_EVPS_discharge_compatibility;//not used;
+    frame.data[5] = (char)(pstPara->ff.f10950_Charger_status +
+                           pstPara->ff.f10951_Charger_error * 0x02 +
+                           pstPara->ff.f10952_Energizing_state * 0x04 +
+                           pstPara->ff.f10953_Battery_incompatibility * 0x08 +
+                           pstPara->ff.f10954_Charging_system_error * 0x10 +
+                           pstPara->ff.f10955_Charging_stop_control * 0x20);
+    frame.data[6] = (char)pstPara->REM_TM0;
+    frame.data[7] = (char)pstPara->REM_TM1;
+    ret = write(pstPara->CANPort_1, &frame, sizeof(struct can_frame));
+
+    frame.can_id = 0x118;
+    frame.can_dlc = 8;
+    frame.data[0] = (char)pstPara->ff.f11800_Dynamic_control + pstPara->ff.f11801_High_current_control * 0x02 +
+                    pstPara->ff.f11802_High_voltage_control * 0x04;
+    frame.data[1] = (char)(pstPara->LIMIT_I_Ext & 0xff);
+    frame.data[2] = (char)(pstPara->LIMIT_I_Ext / 256);
+    frame.data[3] = (char)(pstPara->PRE_I_Ext & 0xff);
+    frame.data[4] = (char)(pstPara->PRE_I_Ext / 256);
+    frame.data[5] = (char)(pstPara->ff.f11850_Operating_condition +
+                           pstPara->ff.f11851_Cooling_function_cable * 0x02 +
+                           pstPara->ff.f11852_Current_limiting_function_cable * 0x04 +
+                           pstPara->ff.f11853_Cooling_function_connector * 0x08 +
+                           pstPara->ff.f11854_Current_limiting_function_connector * 0x10 +
+                           pstPara->ff.f11855_Over_temperature_protection * 0x20 +
+                           pstPara->ff.f11856_Reliability_design * 0x40);
+    frame.data[6] = (char)pstPara->ff.f11860_Reset_max_charging_time;
+    frame.data[7] = (char)0x00;
     ret = write(pstPara->CANPort_1, &frame, sizeof(struct can_frame));
 
     usleep(99900);
