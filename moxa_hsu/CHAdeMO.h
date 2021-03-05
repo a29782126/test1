@@ -171,6 +171,61 @@ struct flags
     ~flags() {}
 };
 
+struct DIO_PARA
+{
+	HANDLE Port;
+	bool enable;
+	bool D1_12V, D1_BRK, D2_GND, D2_BRK;
+	int DOdata[12];
+	int DIdata[12];
+	int DO_read[12];
+	BYTE DI_Status0;
+	BYTE DI_Status1;
+	BYTE DO_Status;
+
+};
+
+//定義時間
+struct ToTime
+{
+	DWORD now_time;   //目前時間
+	DWORD OP_time;    //目前執行時間
+	DWORD start_time; //程序開始時間
+	DWORD begin_time; //充電程序部分開始時間
+	DWORD last_time;
+
+	DWORD case_time;  //進入該CASE的時間
+	DWORD end_time;   //充電程序部分結束時間
+	DWORD finish_time;//完整程序結束時間
+	DWORD last_can_time1;
+	DWORD last_can_time2;
+	DWORD last_can_time0;
+	DWORD can1_output;
+	DWORD dio_output;
+	DWORD real_test_start;
+	DWORD OT[6];
+	DWORD WT[18];
+	DWORD PT[24], Error[28];	
+
+	DWORD D1_ON1, D1_ON2, D1_OFF;
+	DWORD D2_ON1, D2_ON2, D2_OFF;
+	DWORD JK_ON1, JK_OFF, JK_ON2;
+	DWORD VE_ON1, VE_OFF, VE_ON2;
+	DWORD CUT_h, CUT_GND;
+
+	DWORD Test_start;
+	DWORD Test_Time1;
+	DWORD Test_Time2;
+	DWORD Test_Time3;
+	DWORD Test_Time4;
+	DWORD Test_Buff_Time;
+}; 
+
+
+
+
+
+
 typedef struct _CAN_PARA
 {
     bool CAN0_read_enable;
