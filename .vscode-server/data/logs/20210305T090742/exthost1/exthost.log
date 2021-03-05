@@ -18,3 +18,5 @@
 [2021-03-05 09:07:47.819] [exthost] [info] ExtensionService#_doActivateExtension vscode.testing-editor-contributions {"startup":false,"extensionId":{"value":"vscode.testing-editor-contributions","_lower":"vscode.testing-editor-contributions"},"activationEvent":"onStartupFinished"}
 [2021-03-05 09:07:47.819] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/622cb03f7e070a9670c94bae1a45d78d7181fbd4/extensions/testing-editor-contributions/dist/extension.js
 [2021-03-05 09:07:47.825] [exthost] [info] eager extensions activated
+[2021-03-05 10:30:50.532] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-03-05 10:30:51.568] [exthost] [info] exiting with code 0
