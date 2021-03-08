@@ -1,0 +1,21 @@
+[2021-03-08 08:57:21.584] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-03-08 08:57:21.584] [remoteagent] [info] Extension host agent started.
+[2021-03-08 08:57:21.745] [remoteagent] [info] Deleted from disk ms-ceintl.vscode-language-pack-zh-hant /home/soic/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hant-1.53.2
+[2021-03-08 08:57:26.296] [remoteagent] [info] [::ffff:172.24.240.1][f32f3e53][ManagementConnection] New connection established.
+[2021-03-08 08:57:26.298] [remoteagent] [info] [::ffff:172.24.240.1][fdf55280][ExtensionHostConnection] New connection established.
+[2021-03-08 08:57:26.455] [remoteagent] [info] [::ffff:172.24.240.1][fdf55280][ExtensionHostConnection] <41> Launched Extension Host Process.
+[2021-03-08 08:57:29.894] [remoteagent] [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hant
+[2021-03-08 08:57:30.881] [remoteagent] [info] Downloaded extension: ms-ceintl.vscode-language-pack-zh-hant undefined
+[2021-03-08 08:57:31.634] [remoteagent] [info] Extracted extension to /home/soic/.vscode-server/extensions/.ms-ceintl.vscode-language-pack-zh-hant-1.54.2: ms-ceintl.vscode-language-pack-zh-hant
+[2021-03-08 08:57:31.635] [remoteagent] [info] Renamed to /home/soic/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hant-1.54.2
+[2021-03-08 08:57:31.640] [remoteagent] [info] Installation completed. ms-ceintl.vscode-language-pack-zh-hant
+[2021-03-08 08:57:31.666] [remoteagent] [info] Extensions installed successfully: ms-ceintl.vscode-language-pack-zh-hant

@@ -18,3 +18,6 @@
 [2021-03-05 10:31:20.335] [remoteagent] [info] Renamed to /home/soic/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hant-1.54.1
 [2021-03-05 10:31:20.337] [remoteagent] [info] Installation completed. ms-ceintl.vscode-language-pack-zh-hant
 [2021-03-05 10:31:20.367] [remoteagent] [info] Extensions installed successfully: ms-ceintl.vscode-language-pack-zh-hant
+[2021-03-05 17:16:53.401] [remoteagent] [info] [::ffff:172.31.192.1][eab9200d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-03-05 17:16:54.561] [remoteagent] [info] [::ffff:172.31.192.1][9d318350][ExtensionHostConnection] <3406> Extension Host Process exited with code: 0, signal: null.
+[2021-03-05 17:16:54.562] [remoteagent] [info] Last EH closed, waiting before shutting down

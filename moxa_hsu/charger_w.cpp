@@ -8,7 +8,7 @@ int main()
     int ret;
     int do_tmp;
     int di_tmp;
-
+  
     //時間變數宣告
     double start, end;
     double time_used;
@@ -20,7 +20,7 @@ int main()
     AllPara.CAN1_read_enable = true;  
     AllPara.DIO_moxa5112_enable = true; 
     AllPara.io1242_enable = true;
-
+ 
     AllPara.CANPort_0 = CANPORT_DEF(0);
     AllPara.CANPort_1 = CANPORT_DEF(1);
     ret = MXEIO_Init();

@@ -20,6 +20,69 @@
 
 #pragma once
 
+#define CHAdeMO_PORT 1 //CHAdeMO CAN Comm Port
+#define CHROMA_PORT 2  //致茂電子通信埠
+#define DO_ON 0        //定義DO ON狀態的傳回值
+#define DO_OFF 1       //定義DO OFF狀態的傳回值
+#define DI_ON 0        //定義DI ON狀態的傳回值
+#define DI_OFF 1       //定義DI OFF狀態的傳回值
+
+//定義DI通道
+#define Emeg_Stop 0    //停止充電按鈕，平常為
+#define Start_Button 1 //定義充電開始按鈕的DI通道
+#define STOP_Button 2  //定義緊急停止的DI通道，平常為
+#define DDEA_1 3       //直流漏電偵測，正常為ON
+#define LEM_State 4    //LEM，正常為ON
+#define POWER12 5      //12V電源供應，正常為ON
+#define Perm_j 6       //定義Charge permision and prohibition 的DI通道，此信號接收載具端h狀態
+#define GND_DisC 7     //接地線斷路狀態，斷路為OFF
+#define PIh_DisC 8     //PIUG IN(h) 斷路狀態，斷路為OFF
+#define D2_Status 9    //D2開關偵測
+#define D1_Status 10   //D1開關偵測
+#define CL_Status 11   //Connect lock 狀態偵測
+
+//定義DO通道
+#define DCIN_1 0       //
+#define DCIN_2 1       //
+#define DC_Switch 4    //12V電源供應切換
+#define R2_Switch 5    //R2電阻切換
+#define R1_Switch 6    //R1電阻切換
+#define PI_Switch 7    //Charge permision and prohibition斷路開關
+#define GND_Switch 8   //GND斷路開關
+#define Connect_Lock 9 //充電接頭上鎖，電路標註n
+#define Relay_d2 10    //充電繼電器d2之DO通道
+#define Relay_d1 11    //充電繼電器d1之DO通道
+
+//#define POWER_MX 50000
+//#define I_MX    120
+#define CHG_TM_QC 15300
+#define Vdc_LIMIT 10
+#define Vdc_TEST 500
+
+#define CANMSG_MSG_COUNT 9
+#define CANMSG_BUFFER_SIZE (CANMSG_MSG_COUNT * sizeof(CANMSG))
+
+int time_cal(int, int);
+
+void *Data_INI;
+void *Flag_reset;
+void *Para_reset;
+void *Timer_reset;
+void *Result_reset;
+//void *DI_Read;
+void *DO_write;
+void *get_check_time;
+
+void *CH_SUB_01;
+void *CH_SUB_02;
+void *CH_SUB_03;
+void *CH_SUB_04;
+void *CH_SUB_05;
+void *CH_SUB_06;
+
+unsigned int canbus_ini(int port);     //CAN BUS 初始化
+int canbus_close(int port);   //CAN BUS 關閉
+
 struct flags
 {
     bool start_is_pushed;
@@ -33,9 +96,7 @@ struct flags
     bool Charger_Malfunction;
     bool Vehicle_Malfunction;
 
-    ///////////////////////////////////////////////////////////
     //lin
-
     bool f10240_Battery_Battery_overvoltage;
     bool f10241_Battery_undervoltage;
     bool f10242_Battery_current_deviation_error;
@@ -173,58 +234,73 @@ struct flags
 
 struct DIO_PARA
 {
-	HANDLE Port;
-	bool enable;
-	bool D1_12V, D1_BRK, D2_GND, D2_BRK;
-	int DOdata[12];
-	int DIdata[12];
-	int DO_read[12];
-	BYTE DI_Status0;
-	BYTE DI_Status1;
-	BYTE DO_Status;
-
+    //HANDLE Port;
+    bool enable;
+    bool D1_12V, D1_BRK, D2_GND, D2_BRK;
+    int DOdata[12];
+    int DIdata[12];
+    int DO_read[12];
+    BYTE DI_Status0;
+    BYTE DI_Status1;
+    BYTE DO_Status;
 };
 
 //定義時間
 struct ToTime
 {
-    
-	double OP_time;    //目前執行時間
-	double start_time; //程序開始時間
-	double begin_time; //充電程序部分開始時間
-	double last_time;
 
-	double case_time;  //進入該CASE的時間
-	double end_time;   //充電程序部分結束時間
-	double finish_time;//完整程序結束時間
-	double last_can_time1;
-	double last_can_time2;
-	double last_can_time0;
-	double can1_output;
-	double dio_output;
-	double real_test_start;
-	double OT[6];
-	double WT[18];
-	double PT[24], Error[28];	
+    double OP_time;    //目前執行時間
+    double start_time; //程序開始時間
+    double begin_time; //充電程序部分開始時間
+    double last_time;
 
-	double D1_ON1, D1_ON2, D1_OFF;
-	double D2_ON1, D2_ON2, D2_OFF;
-	double JK_ON1, JK_OFF, JK_ON2;
-	double VE_ON1, VE_OFF, VE_ON2;
-	double CUT_h, CUT_GND;
+    double case_time;   //進入該CASE的時間
+    double end_time;    //充電程序部分結束時間
+    double finish_time; //完整程序結束時間
+    double last_can_time1;
+    double last_can_time2;
+    double last_can_time0;
+    double can1_output;
+    double dio_output;
+    double real_test_start;
+    double OT[6];
+    double WT[18];
+    double PT[24], Error[28];
 
-	double Test_start;
-	double Test_Time1;
-	double Test_Time2;
-	double Test_Time3;
-	double Test_Time4;
-	double Test_Buff_Time;
-}; 
+    double D1_ON1, D1_ON2, D1_OFF;
+    double D2_ON1, D2_ON2, D2_OFF;
+    double JK_ON1, JK_OFF, JK_ON2;
+    double VE_ON1, VE_OFF, VE_ON2;
+    double CUT_h, CUT_GND;
 
+    double Test_start;
+    double Test_Time1;
+    double Test_Time2;
+    double Test_Time3;
+    double Test_Time4;
+    double Test_Buff_Time;
+};
 
+struct CHROMA
+{
+    bool C_Control, C_Relay, C_IsRunning, C_IsFinish, C_SystemError, C_Result, C_Charger_Button, P_SystemError, P_VoltageError, P_CurrentError, P_IsEnable, P_Communication;
 
+    DWORD C_TaskN, C_TestN, C_Teststep, C_TestPara1, C_TestPara2, C_ChargingV, C_ChargingC, P_MeasureC, P_MeasureV;
+    WORD RESIDE_TIME;
+};
 
-
+struct POWER_CTL
+{
+    bool POWER_ON;
+    bool POWER_ON_SET;
+    double SET_I;
+    double SET_V;
+    double READ_I;
+    double READ_V;
+    double POWER_MAX;
+    double I_MAX;
+    double V_MAX;
+};
 
 typedef struct _CAN_PARA
 {
