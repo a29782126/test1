@@ -7,7 +7,8 @@
 	"remoteAuthority": "wsl+Debian",
 	"settings": {
 		"files.associations": {
-			"iostream": "cpp"
+			"iostream": "cpp",
+			"limits": "cpp"
 		}
 	}
 }

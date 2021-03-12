@@ -62,6 +62,12 @@
 #define CANMSG_MSG_COUNT 9
 #define CANMSG_BUFFER_SIZE (CANMSG_MSG_COUNT * sizeof(CANMSG))
 
+#define min(a, b) ({ \
+    typeof(a) __min1__ = (a);  \
+    typeof(b) __min2__ = (b);  \
+    (void)(&__min1__ == &__min2__);  \
+    __min1__ < __min2__ ? __min1__ : __min2__; })
+
 int time_cal(int, int);
 
 void *Data_INI;
@@ -72,16 +78,16 @@ void *Result_reset;
 //void *DI_Read;
 void *DO_write;
 void *get_check_time;
-
+/*
 void *CH_SUB_01;
 void *CH_SUB_02;
 void *CH_SUB_03;
 void *CH_SUB_04;
 void *CH_SUB_05;
 void *CH_SUB_06;
-
-unsigned int canbus_ini(int port);     //CAN BUS 初始化
-int canbus_close(int port);   //CAN BUS 關閉
+*/
+unsigned int canbus_ini(int port); //CAN BUS 初始化
+int canbus_close(int port);        //CAN BUS 關閉
 
 struct flags
 {
@@ -97,7 +103,7 @@ struct flags
     bool Vehicle_Malfunction;
 
     //lin
-    bool f10240_Battery_Battery_overvoltage;
+    bool f10240_Battery_overvoltage;
     bool f10241_Battery_undervoltage;
     bool f10242_Battery_current_deviation_error;
     bool f10243_High_battery_temperature;
@@ -170,7 +176,7 @@ struct flags
         Vehicle_Malfunction = false;
         Charger_Malfunction = false;
         ////////////////////////lin
-        f10240_Battery_Battery_overvoltage = false;
+        f10240_Battery_overvoltage = false;
         f10241_Battery_undervoltage = false;
         f10242_Battery_current_deviation_error = false;
         f10243_High_battery_temperature = false;
@@ -313,7 +319,11 @@ typedef struct _CAN_PARA
     int CANPort_0, CANPort_1;
     int time_tmp;
 
+    int LIMIT_TIME, Vdc, Idc, POWER_MX, I_MX, PassVoltage[4];
+
     flags ff;
+    DIO_PARA DIO;
+    ToTime tt;
 
     //#100
     BYTE MIN_I;   //Minimum charge current
@@ -353,6 +363,9 @@ typedef struct _CAN_PARA
     WORD LIMIT_I_Ext; //Available output current
     WORD PRE_I_Ext;   //Present charging current
 
+    DWORD charging_step;
+    DWORD next_step;
+
     int di_state[4];
     int do_state[4] = {0};
 
@@ -361,3 +374,311 @@ typedef struct _CAN_PARA
     DWORD io1242_di;
     DWORD io1242_do;
 } CAN_PARA, *PCAN_PARA;
+
+void *CH_SUB_01(void *param)
+{
+    PCAN_PARA pstPara = (PCAN_PARA)param;
+
+    pstPara->LIMIT_V = 500;
+    printf("CH_SUB_01\r\n");
+    if (pstPara->CHG_MX > 0)
+    {
+
+        if (pstPara->CHG_MX <= pstPara->BAT_MX)
+        {
+            if (pstPara->CHG_MX <= pstPara->LIMIT_V)
+            {
+                pstPara->LIMIT_VOLT = min(pstPara->CHG_MX, pstPara->LIMIT_V); //( pstPara->CHG_MX, pstPara->LIMIT_V)
+                printf("CHG_MX = %d.\r\n", pstPara->CHG_MX);
+                printf("LIMIT_VOLT = %d.\r\n", pstPara->LIMIT_VOLT);
+
+                //Available output current calculation
+                if (pstPara->ff.Enable_High_Current)
+                {
+                    pstPara->LIMIT_I_Ext = pstPara->POWER_MX * 1000 / pstPara->LIMIT_VOLT;
+                    if (!(pstPara->LIMIT_I_Ext < pstPara->I_MX))
+                        pstPara->LIMIT_I_Ext = pstPara->I_MX;
+                    pstPara->LIMIT_I = pstPara->LIMIT_I_Ext;
+                    if (pstPara->LIMIT_I_Ext >= 255)
+                        pstPara->LIMIT_I = 255;
+                }
+                else
+                {
+                    pstPara->LIMIT_I = pstPara->POWER_MX * 1000 / pstPara->LIMIT_VOLT;
+                    printf("LIMIT_I = %d.\r\n", pstPara->LIMIT_I);
+                    if (!(pstPara->LIMIT_I < pstPara->I_MX))
+                        pstPara->LIMIT_I = pstPara->I_MX;
+                    pstPara->LIMIT_I_Ext = 0;
+                }
+            }
+
+            //Battery Incompatibility #109.5.3=1
+            else
+            {
+                pstPara->ff.f10953_Battery_incompatibility = true;
+                pstPara->tt.Error[22] = pstPara->tt.OP_time;
+            }
+        }
+        //Battery malfunction #109.5.4=1
+        else
+        {
+            pstPara->ff.f10954_Charging_system_error = true;
+            pstPara->tt.Error[21] = pstPara->tt.OP_time;
+        }
+    }
+    //return;
+}
+
+void *CH_SUB_02(void *param)
+{
+	PCAN_PARA pstPara = (PCAN_PARA) param;
+	int CHG_TM;
+	
+	//Maximum charging time calculation
+	if(pstPara->CHG_TM0 == 0xff)
+	{
+		CHG_TM = pstPara->CHG_TM1 *60;
+	}
+	else
+	{
+		CHG_TM = pstPara->CHG_TM0 *10;
+	}
+	if(CHG_TM <= CHG_TM_QC)
+	{
+		pstPara->LIMIT_TIME = CHG_TM;
+	}
+	else
+	{
+		pstPara->LIMIT_TIME = CHG_TM_QC;
+	}
+
+    //Set Calculation result as CAN data
+	if(pstPara->LIMIT_TIME > 2540)
+	{
+		pstPara->REM_TM0 = 0xff;
+		pstPara->REM_TM1 = pstPara->LIMIT_TIME/60;
+	}
+	else
+	{
+		pstPara->REM_TM0 = pstPara->LIMIT_TIME/10;
+		pstPara->REM_TM1 = 0x0;
+	}
+
+}
+
+void CH_SUB_05(void *param)
+{
+	PCAN_PARA pstPara = (PCAN_PARA) param;
+
+    pstPara->ff.Enable_High_Current	= (pstPara->ff.f11001_High_current_control && pstPara->ff.f11801_High_current_control);
+	pstPara->ff.Enable_Dynamic_Control  = (pstPara->ff.f11000_Dynamic_control && pstPara->ff.f11800_Dynamic_control);
+	pstPara->ff.Enable_High_Voltage = (pstPara->ff.f11802_High_voltage_control && pstPara->ff.f11802_High_voltage_control);	
+}
+
+void CH_SUB_06(void *param)
+{
+	PCAN_PARA pstPara = (PCAN_PARA) param;
+
+	if((pstPara->ff.TOT_01_check) && (pstPara->tt.Error[0] == 0xffff))
+	{
+		pstPara->tt.Error[0] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 01 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+	if((pstPara->ff.TOT_04_check) && (pstPara->tt.Error[1] == 0xffff))
+	{
+		pstPara->tt.Error[1] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 04 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+	if((pstPara->ff.TOT_07_check) && (pstPara->tt.Error[2] == 0xffff))
+	{
+		pstPara->tt.Error[2] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 07 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+	if((pstPara->ff.TOT_08_check) && (pstPara->tt.Error[3] == 0xffff))
+	{
+		pstPara->tt.Error[3] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 08 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+	if((pstPara->ff.TOT_14_check) && (pstPara->tt.Error[4] == 0xffff))
+	{
+		pstPara->tt.Error[4] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 14 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+	if((pstPara->ff.TOT_15_check) && (pstPara->tt.Error[5] == 0xffff))
+	{
+		pstPara->tt.Error[5] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! TOT 15 detected...\r\n", pstPara->tt.OP_time, pstPara->charging_step); 
+	}
+
+
+
+	if((pstPara->ff.f10240_Battery_overvoltage) && (pstPara->tt.Error[6] == 0xffff))
+	{
+		pstPara->tt.Error[6] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10240 Battery_overvoltage...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10241_Battery_undervoltage) && (pstPara->tt.Error[7] == 0xffff))
+	{
+		pstPara->tt.Error[7] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10241 Battery_undervoltage...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10242_Battery_current_deviation_error) && (pstPara->tt.Error[8] == 0xffff))
+	{
+		pstPara->tt.Error[8] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10242 Battery_current_deviation_error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10243_High_battery_temperature) && (pstPara->tt.Error[9] == 0xffff))
+	{
+		pstPara->tt.Error[9] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10243_High_battery_temperature...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10244_Battery_voltage_deviation_error) && (pstPara->tt.Error[10] == 0xffff))
+	{
+		pstPara->tt.Error[10] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10244_Battery_voltage_deviation_error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+
+
+	if (pstPara->tt.Error[11] == 0xffff)
+	{
+
+		if(((pstPara->charging_step == 0x1200) && (pstPara->ff.f10250_Vehicle_charging_enable)&& ((pstPara->tt.OP_time - pstPara->tt.PT[0]) >=50)) ||
+		   ((pstPara->charging_step >= 0x1400) && (pstPara->charging_step <= 0x1800) && (!pstPara->ff.f10250_Vehicle_charging_enable)) ||
+		   ((pstPara->charging_step >= 0x3400) && (pstPara->charging_step <= 0x3700) && (pstPara->ff.f10250_Vehicle_charging_enable)))
+		{		
+			pstPara->tt.Error[11] = pstPara->tt.OP_time;
+			pstPara->ff.Vehicle_Malfunction = true;
+			printf("%10d, %X, Warning!!! f10250_Vehicle_charging_enable state error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	}
+
+	if((pstPara->ff.f10251_Vehicle_shift_position) && (pstPara->tt.Error[12] == 0xffff))
+	{
+		pstPara->tt.Error[12] = pstPara->tt.OP_time;
+		pstPara->ff.stop_is_pushed = true;
+		printf("%10d, %X, Warning!!! f10251_Vehicle_shift_position...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10252_Charging_system_error) && (pstPara->tt.Error[13] == 0xffff))
+	{
+		pstPara->tt.Error[13] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10252_Other_Vehicle_faults...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+
+
+	if((pstPara->ff.f10951_Charger_error) && (pstPara->tt.Error[14] == 0xffff) && (pstPara->charging_step > 0x1300))
+	{
+		pstPara->tt.Error[14] = pstPara->tt.OP_time;
+		pstPara->ff.Charger_Malfunction = true;
+		printf("%10d, %X, Warning!!! f10951_Charger_malfunction...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10953_Battery_incompatibility) && (pstPara->tt.Error[15] == 0xffff) && (pstPara->charging_step > 0x1300))
+	{
+		pstPara->tt.Error[15] = pstPara->tt.OP_time;
+		//pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!!f10953_Battery_incompatibility...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+	if((pstPara->ff.f10954_Charging_system_error) && (pstPara->tt.Error[16] == 0xffff) && (pstPara->charging_step > 0x1300))
+	{
+		pstPara->tt.Error[16] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!!f10954_Battery_malfunction...\r\n", pstPara->tt.OP_time, pstPara->charging_step);   
+	}
+
+	if (pstPara->tt.Error[17] == 0xffff)
+	{
+
+		if(((pstPara->charging_step == 0x1200) && (pstPara->DIO.DIdata[Perm_j] == DI_ON) && ((pstPara->tt.OP_time - pstPara->tt.PT[0]) >=50)) ||
+		   ((pstPara->charging_step >= 0x1400) && (pstPara->charging_step <= 0x1900) && (pstPara->DIO.DIdata[Perm_j] == DI_OFF)) ||
+		   ((pstPara->charging_step >= 0x3400) && (pstPara->charging_step <= 0x3700) && (pstPara->DIO.DIdata[Perm_j] == DI_ON)))
+		{		
+			pstPara->tt.Error[17] = pstPara->tt.OP_time;
+			pstPara->ff.Vehicle_Malfunction = true;
+			printf("%10d, %X, Warning!!! Charging enable switch K state error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	} 
+
+	if (pstPara->tt.Error[18] == 0xffff)
+	{
+
+		if(((pstPara->charging_step >= 0x1300) && (pstPara->charging_step <= 0x1500) && (pstPara->CHG_I > 0)) ||
+		   ((pstPara->charging_step >= 0x3400) && (pstPara->charging_step <= 0x3800) && (pstPara->CHG_I > 0)))
+		{		
+			pstPara->tt.Error[18] = pstPara->tt.OP_time;
+			pstPara->ff.Vehicle_Malfunction = true;
+			printf("%10d, %X, Warning!!! Charging Current error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	}
+
+	if ((pstPara->charging_step == 0x2100) && (pstPara->tt.Error[19] == 0xffff) &&(pstPara->CHG_I > pstPara->LIMIT_I))
+	{
+		
+		pstPara->tt.Error[19] = pstPara->tt.OP_time;
+		pstPara->ff.Vehicle_Malfunction = true;
+		printf("%10d, %X, Warning!!! Charging Current error...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+
+	}
+
+	if ((pstPara->tt.Error[20] == 0xffff) && (pstPara->charging_step < 0x3500) && (pstPara->charging_step >= 0x1400))
+	{
+		if((pstPara->tt.OP_time - pstPara->tt.last_can_time0 >100) || (pstPara->tt.OP_time - pstPara->tt.last_can_time1 >100) || (pstPara->tt.OP_time - pstPara->tt.last_can_time2 >100))
+		{
+			pstPara->tt.Error[20] = pstPara->tt.OP_time;
+			pstPara->ff.Vehicle_Malfunction = true;
+			printf("%10d, %X, Warning!!! CAN missiing over 1 sec...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	}
+	if ((pstPara->tt.Error[26] == 0xffff)  && (pstPara->charging_step <= 0x1800))
+	{
+		if(pstPara->ff.stop_is_pushed)
+		{
+			pstPara->tt.Error[26] = pstPara->tt.OP_time;
+			printf("%10d, %X, Warning!!! Stop button is pushed...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	}
+	if (pstPara->tt.Error[27] == 0xffff) 
+	{
+		if(pstPara->ff.emeg_is_pushed)
+		{
+			pstPara->tt.Error[14] = pstPara->tt.OP_time;
+			pstPara->tt.Error[27] = pstPara->tt.OP_time;
+			pstPara->ff.f10951_Charger_error = true;
+			pstPara->ff.Charger_Malfunction = true;
+			printf("%10d, %X, Warning!!! Emeg STOP pushed...\r\n", pstPara->tt.OP_time, pstPara->charging_step);  
+		}
+	}
+
+	if(pstPara->ff.CH_SUB_10_enable)
+	{
+
+		if((pstPara->charging_step >= 0x1100) && (pstPara->charging_step <= 0x1800))
+		{
+			if((pstPara->ff.Charger_Malfunction) || (pstPara->ff.Vehicle_Malfunction) || (pstPara->ff.stop_is_pushed) || pstPara->ff.f10953_Battery_incompatibility )
+			{
+
+				pstPara->next_step = 0x3500;
+				pstPara->tt.PT[18] = pstPara->tt.OP_time;
+				pstPara->DIO.DOdata[Relay_d1] = DO_OFF;
+				printf("%10d, %X, set relay d1 off %d...\r\n", pstPara->tt.OP_time, pstPara->charging_step, pstPara->tt.PT[18]);  
+			}
+		}
+		else if(pstPara->charging_step == 0x2100)
+		{
+			if(pstPara->ff.Charger_Malfunction || pstPara->ff.Vehicle_Malfunction || pstPara->ff.f10953_Battery_incompatibility ) 
+			{
+				pstPara->next_step = 0x3100;
+			}
+		}
+	}
+}

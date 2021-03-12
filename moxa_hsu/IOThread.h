@@ -171,7 +171,7 @@ void *canwrite1(void *args)
                            pstPara->ff.f11854_Current_limiting_function_connector * 0x10 +
                            pstPara->ff.f11855_Over_temperature_protection * 0x20 +
                            pstPara->ff.f11856_Reliability_design * 0x40);
-    frame.data[6] = (char)pstPara->ff.f11860_Reset_max_charging_time;
+    frame.data[6] = (char)(pstPara->ff.f11860_Reset_max_charging_time);
     frame.data[7] = (char)0x00;
     ret = write(pstPara->CANPort_1, &frame, sizeof(struct can_frame));
 
