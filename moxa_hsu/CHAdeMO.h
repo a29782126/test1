@@ -325,7 +325,15 @@ typedef struct _CAN_PARA
     DIO_PARA DIO;
     ToTime tt;
 
-    //#100
+    int di_state[4];
+    int do_state[4] = {0};
+
+    int iHandle[DEVICE_COUNT] = {0}; //ioLogicK module handle
+    double io1242_AI[4] = {0};
+    DWORD io1242_di;
+    DWORD io1242_do;
+
+        //#100
     BYTE MIN_I;   //Minimum charge current
     WORD MIN_V;   //Minimum battery voltage
     WORD BAT_MX;  //Maximum battery voltage
@@ -366,13 +374,7 @@ typedef struct _CAN_PARA
     DWORD charging_step;
     DWORD next_step;
 
-    int di_state[4];
-    int do_state[4] = {0};
-
-    int iHandle[DEVICE_COUNT] = {0}; //ioLogicK module handle
-    double io1242_AI[4] = {0};
-    DWORD io1242_di;
-    DWORD io1242_do;
+    
 } CAN_PARA, *PCAN_PARA;
 
 void *CH_SUB_01(void *param)

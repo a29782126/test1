@@ -1,0 +1,15 @@
+[2021-03-15 14:20:19.902] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-03-15 14:20:19.902] [remoteagent] [info] Extension host agent started.
+[2021-03-15 14:20:20.098] [remoteagent] [info] Deleted from disk ms-ceintl.vscode-language-pack-zh-hant /home/soic/.vscode-server/extensions/ms-ceintl.vscode-language-pack-zh-hant-1.54.1
+[2021-03-15 14:20:20.135] [remoteagent] [info] [::ffff:172.24.240.1][4c1c7dc1][ManagementConnection] New connection established.
+[2021-03-15 14:20:20.147] [remoteagent] [info] [::ffff:172.24.240.1][e284f140][ExtensionHostConnection] New connection established.
+[2021-03-15 14:20:20.287] [remoteagent] [info] [::ffff:172.24.240.1][e284f140][ExtensionHostConnection] <41> Launched Extension Host Process.

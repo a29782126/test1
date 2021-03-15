@@ -71,3 +71,6 @@
 [2021-03-12 09:33:36.379] [remoteagent] [info] Replaying 141488 chars and 19 size events.
 [2021-03-12 09:38:36.098] [remoteagent] [info] [::ffff:172.24.240.1][f6c14659][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
 [2021-03-12 09:38:37.288] [remoteagent] [info] [::ffff:172.24.240.1][97fdf40c][ExtensionHostConnection] <26801> Extension Host Process exited with code: 0, signal: null.
+[2021-03-12 17:12:08.734] [remoteagent] [info] [::ffff:172.24.240.1][ccf65578][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-03-12 17:12:09.953] [remoteagent] [info] [::ffff:172.24.240.1][83b12160][ExtensionHostConnection] <24528> Extension Host Process exited with code: 0, signal: null.
+[2021-03-12 17:12:09.953] [remoteagent] [info] Last EH closed, waiting before shutting down

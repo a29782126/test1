@@ -228,9 +228,9 @@ void *canread1(void *args)
     //===========================================================
     //這個區域撰寫每次讀到的CAN資料轉換成要使用的變數與旗標
 
-    //    printf("CAN0 received: %010.4f %03x [%d] ", now_time, frame.can_id, frame.can_dlc);
-    //    for (int i = 0; i < frame.can_dlc; i++) printf(" %02x", frame.data[i]);
-    //    printf("\n");
+        printf("CAN1 received: %010.4f %03x [%d] ", now_time, frame.can_id, frame.can_dlc);
+        for (int i = 0; i < frame.can_dlc; i++) printf(" %02x", frame.data[i]);
+        printf("\n");
     //============================================================
 
     //每讀10筆資料休息0.1秒

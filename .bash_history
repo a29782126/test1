@@ -524,3 +524,12 @@ scp charger_w moxa@192.168.3.127:~
 make ARCH=5112 EXEC=charger_w
 scp charger_w moxa@192.168.3.127:~
 make ARCH=5112 EXEC=charger_w
+./1.cpp
+ls -al
+chmod 777 1.cpp
+./1.cpp
+make ARCH=pc EXEC=1
+make ARCH=5112 EXEC=charger_w
+scp charger_w moxa@192.168.3.127:~
+make ARCH=5112 EXEC=charger_w
+scp charger_w moxa@192.168.3.127:~
