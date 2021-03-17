@@ -13,3 +13,6 @@
 [2021-03-15 14:20:20.135] [remoteagent] [info] [::ffff:172.24.240.1][4c1c7dc1][ManagementConnection] New connection established.
 [2021-03-15 14:20:20.147] [remoteagent] [info] [::ffff:172.24.240.1][e284f140][ExtensionHostConnection] New connection established.
 [2021-03-15 14:20:20.287] [remoteagent] [info] [::ffff:172.24.240.1][e284f140][ExtensionHostConnection] <41> Launched Extension Host Process.
+[2021-03-16 09:19:50.528] [remoteagent] [info] [::ffff:172.24.240.1][e284f140][ExtensionHostConnection] The client has reconnected.
+[2021-03-16 09:19:50.744] [remoteagent] [info] [::ffff:172.24.240.1][4c1c7dc1][ManagementConnection] The client has reconnected.
+[2021-03-16 13:09:02.005] [remoteagent] [info] [::ffff:172.24.240.1][4c1c7dc1][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

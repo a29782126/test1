@@ -38,7 +38,7 @@ int main()
     start = get_now_time();
     usleep(990000);
 
-    for (int i = 0; i < 100; i++)
+/* for (int i = 0; i < 100; i++)
     {
         //擷取目前時間
         end = get_now_time();
@@ -62,7 +62,7 @@ int main()
         AllPara.io1242_do = AllPara.do_state[0] + AllPara.do_state[1] * 2 + AllPara.do_state[2] * 4 + AllPara.do_state[3] * 8;
 
         usleep(990000);
-    }
+    }*/
 
     //讓所有執行緒的執行旗標設定為false
     AllPara.CAN0_write_enable = false;
