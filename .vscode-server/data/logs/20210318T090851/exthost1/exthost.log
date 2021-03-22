@@ -66,3 +66,5 @@
 [2021-03-18 09:08:55.657] [exthost] [info] ExtensionService#_doActivateExtension vscode.testing-editor-contributions {"startup":false,"extensionId":{"value":"vscode.testing-editor-contributions","_lower":"vscode.testing-editor-contributions"},"activationEvent":"onStartupFinished"}
 [2021-03-18 09:08:55.658] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/testing-editor-contributions/dist/extension.js
 [2021-03-18 09:08:55.659] [exthost] [info] eager extensions activated
+[2021-03-19 09:05:55.712] [exthost] [info] extension host terminating: renderer disconnected for too long (2)
+[2021-03-19 09:05:56.764] [exthost] [info] exiting with code 0
