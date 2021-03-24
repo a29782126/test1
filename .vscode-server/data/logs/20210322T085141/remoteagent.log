@@ -13,3 +13,27 @@
 [2021-03-22 08:51:43.005] [remoteagent] [info] [::ffff:172.27.224.1][283fa6aa][ManagementConnection] New connection established.
 [2021-03-22 08:51:43.014] [remoteagent] [info] [::ffff:172.27.224.1][729b0666][ExtensionHostConnection] New connection established.
 [2021-03-22 08:51:43.094] [remoteagent] [info] [::ffff:172.27.224.1][729b0666][ExtensionHostConnection] <41> Launched Extension Host Process.
+[2021-03-23 08:39:47.718] [remoteagent] [info] [::ffff:172.27.224.1][283fa6aa][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-03-23 10:41:07.568] [remoteagent] [info] [::ffff:172.27.224.1][283fa6aa][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2021-03-23 10:41:07.572] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] New connection established.
+[2021-03-23 10:41:07.578] [remoteagent] [info] [::ffff:172.27.224.1][f154b5a2][ExtensionHostConnection] New connection established.
+[2021-03-23 10:41:07.650] [remoteagent] [info] [::ffff:172.27.224.1][f154b5a2][ExtensionHostConnection] <3823> Launched Extension Host Process.
+[2021-03-23 10:41:11.676] [remoteagent] [info] Terminal layout retrieved: [1,1]
+[2021-03-23 10:41:11.768] [remoteagent] [info] Replaying 734 chars and 8 size events.
+[2021-03-23 10:41:11.768] [remoteagent] [info] Replaying 678 chars and 2 size events.
+[2021-03-23 10:46:07.569] [remoteagent] [info] [::ffff:172.27.224.1][283fa6aa][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+[2021-03-23 10:46:08.700] [remoteagent] [info] [::ffff:172.27.224.1][729b0666][ExtensionHostConnection] <41> Extension Host Process exited with code: 0, signal: null.
+[2021-03-23 16:23:37.066] [remoteagent] [info] [::ffff:172.27.224.1][f154b5a2][ExtensionHostConnection] The client has reconnected.
+[2021-03-23 16:23:37.077] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] The client has reconnected.
+[2021-03-23 16:34:51.554] [remoteagent] [info] [::ffff:172.27.224.1][f154b5a2][ExtensionHostConnection] The client has reconnected.
+[2021-03-23 16:34:51.603] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] The client has reconnected.
+[2021-03-24 08:26:19.380] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] New connection established.
+[2021-03-24 08:26:19.400] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] New connection established.
+[2021-03-24 08:26:19.434] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] <24891> Launched Extension Host Process.
+[2021-03-24 08:26:23.394] [remoteagent] [info] Terminal layout retrieved: [1,1]
+[2021-03-24 08:26:23.482] [remoteagent] [info] Replaying 2046 chars and 24 size events.
+[2021-03-24 08:26:23.483] [remoteagent] [info] Replaying 73290 chars and 17 size events.
+[2021-03-24 08:31:20.419] [remoteagent] [info] [::ffff:172.27.224.1][f154b5a2][ExtensionHostConnection] <3823> Extension Host Process exited with code: 0, signal: null.
+[2021-03-24 08:35:38.760] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has reconnected.
+[2021-03-24 08:35:38.776] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
+[2021-03-24 08:40:23.207] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

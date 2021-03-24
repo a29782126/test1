@@ -109,3 +109,6 @@
 [2021-03-22 09:47:32.797] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 515
 [2021-03-22 09:47:37.946] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 525
 [2021-03-22 09:47:43.093] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 515
+[2021-03-22 09:47:46.770] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 515
+[2021-03-23 10:46:07.586] [exthost] [info] extension host terminating: renderer disconnected for too long (2)
+[2021-03-23 10:46:08.662] [exthost] [info] exiting with code 0
