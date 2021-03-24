@@ -37,3 +37,8 @@
 [2021-03-24 08:35:38.760] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has reconnected.
 [2021-03-24 08:35:38.776] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
 [2021-03-24 08:40:23.207] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-03-24 11:40:23.211] [remoteagent] [info] [::ffff:172.27.224.1][9d0a932c][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+[2021-03-24 12:50:26.151] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has reconnected.
+[2021-03-24 12:50:26.152] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
+[2021-03-24 13:05:30.130] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
+[2021-03-24 13:05:30.174] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has reconnected.

@@ -256,7 +256,7 @@ int main()
                 echo = false;
             }
 
-            //CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
 
             if (((CANParaC.tt.PT[1] == 0) && (CANParaC.tt.OP_time - CANParaC.tt.PT[0]) > CANParaC.tt.WT[0]))
             {
@@ -281,7 +281,7 @@ int main()
                 CANParaC.eSend = true;
                 echo = false;
             }
-            //CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
 
             if (CANParaC.tt.PT[2] == 0)
             {
@@ -329,7 +329,7 @@ int main()
                 printf("%10d, %X, GOTO Next...\r\n", CANParaC.tt.OP_time, CANParaC.charging_step);
             }
 
-            // CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
 
             break;
 
@@ -367,7 +367,7 @@ int main()
                 CANParaC.next_step = 0x1501;
                 echo = true;
             }
-            //CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
             break;
 
         case 0x1501:
@@ -411,7 +411,7 @@ int main()
                 CANParaC.tt.PT[8] = CANParaC.tt.OP_time;
                 printf("%10d, %X, Vdc > 50 detected... GOTO Next...\r\n", CANParaC.tt.OP_time, CANParaC.charging_step);
             }
-            //CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
             break;
 
         case 0x1700:
@@ -427,7 +427,7 @@ int main()
                 CANParaC.tt.PT[9] = CANParaC.tt.OP_time;
                 printf("%10d, %X, I command > 0 detected... GOTO Next...\r\n", CANParaC.tt.OP_time, CANParaC.charging_step);
             }
-            //CH_SUB_01(&CANParaC);
+            CH_SUB_01(&CANParaC);
             break;
 
         case 0x1800:
@@ -944,10 +944,7 @@ int main()
                 CANParaC.next_step = 0x1000;
             }
             break;
-    }
-  
-
-        
+        }
 
 #pragma endregion
 
@@ -956,7 +953,7 @@ int main()
         CANParaC.Chroma.C_ChargingC = CANParaC.I_Command;
         CANParaC.POWER8000.SET_V = CANParaC.Chroma.C_ChargingV;
         CANParaC.POWER8000.SET_I = CANParaC.Chroma.C_ChargingC;
-  
+
         if (CANParaC.Chroma.C_Relay)
         {
             CANParaC.DIO.DOdata[DCIN_1] = DO_ON;
@@ -968,7 +965,6 @@ int main()
             CANParaC.DIO.DOdata[DCIN_2] = DO_OFF;
         }
         CANParaC.POWER8000.POWER_ON_SET = CANParaC.Chroma.C_Control;
-
 
 #pragma region TimeOutCheck
 
@@ -1022,7 +1018,7 @@ int main()
             {
                 CANParaC.ff.TOT_08_enable = false;
                 CANParaC.ff.TOT_08_check = true;
-                CANParaC.ff.f10954_Charging_system_error= true;
+                CANParaC.ff.f10954_Charging_system_error = true;
                 echo = true;
                 printf("%10d, %X, TimeOutTime 08 detected!!\r\n", CANParaC.tt.OP_time, CANParaC.charging_step);
             }
@@ -1051,7 +1047,7 @@ int main()
             {
                 CANParaC.ff.TOT_15_enable = false;
                 CANParaC.ff.TOT_15_check = true;
-                CANParaC.ff.f10954_Charging_system_error= true;
+                CANParaC.ff.f10954_Charging_system_error = true;
                 CANParaC.next_step = 0x3700;
                 echo = true;
                 printf("%10d, %X, TimeOutTime 15 detected!!\r\n", CANParaC.tt.OP_time, CANParaC.charging_step);
@@ -1100,36 +1096,35 @@ int main()
 
         //DO_write(&CANParaC);
         CANParaC.tt.finish_time = CANParaC.tt.now_time;
-        usleep(9000);
-        //Sleep(9);
-}
+        usleep(9000); //Sleep(9);
+    }
 
-//-----------------------------------------------------------------
-//-----------------------------------------------------------------
-//讓所有執行緒的執行旗標設定為false
-AllPara.CAN0_write_enable = false;
-AllPara.CAN1_write_enable = false;
-AllPara.CAN0_read_enable = false;
-AllPara.CAN1_read_enable = false;
-AllPara.DIO_moxa5112_enable = false;
-AllPara.io1242_enable = false;
-printf("Set CAN0 Write = %d from main thread\n", AllPara.CAN0_write_enable);
-printf("Set CAN1 Write = %d from main thread\n", AllPara.CAN1_write_enable);
-printf("Set CAN0 Read = %d from main thread\n", AllPara.CAN0_read_enable);
-printf("Set CAN1 Read = %d from main thread\n", AllPara.CAN1_read_enable);
-printf("Set CAN0 Read = %d from main thread\n", AllPara.CAN0_read_enable);
-printf("Set MOXA 5112LX DIO = %d from main thread\n", AllPara.DIO_moxa5112_enable);
-printf("Set io1242_module = %d from main thread\n", AllPara.io1242_enable);
-pthread_cancel(tids[2]);
-pthread_cancel(tids[3]);
+    //-----------------------------------------------------------------
+    //-----------------------------------------------------------------
+    //讓所有執行緒的執行旗標設定為false
+    AllPara.CAN0_write_enable = false;
+    AllPara.CAN1_write_enable = false;
+    AllPara.CAN0_read_enable = false;
+    AllPara.CAN1_read_enable = false;
+    AllPara.DIO_moxa5112_enable = false;
+    AllPara.io1242_enable = false;
+    printf("Set CAN0 Write = %d from main thread\n", AllPara.CAN0_write_enable);
+    printf("Set CAN1 Write = %d from main thread\n", AllPara.CAN1_write_enable);
+    printf("Set CAN0 Read = %d from main thread\n", AllPara.CAN0_read_enable);
+    printf("Set CAN1 Read = %d from main thread\n", AllPara.CAN1_read_enable);
+    printf("Set CAN0 Read = %d from main thread\n", AllPara.CAN0_read_enable);
+    printf("Set MOXA 5112LX DIO = %d from main thread\n", AllPara.DIO_moxa5112_enable);
+    printf("Set io1242_module = %d from main thread\n", AllPara.io1242_enable);
+    pthread_cancel(tids[2]);
+    pthread_cancel(tids[3]);
 
-pthread_join(tids[0], NULL);
-pthread_join(tids[1], NULL);
-pthread_join(tids[2], NULL);
-pthread_join(tids[3], NULL);
-pthread_join(tids[4], NULL);
-pthread_join(tids[5], NULL);
-MXEIO_Exit();
+    pthread_join(tids[0], NULL);
+    pthread_join(tids[1], NULL);
+    pthread_join(tids[2], NULL);
+    pthread_join(tids[3], NULL);
+    pthread_join(tids[4], NULL);
+    pthread_join(tids[5], NULL);
+    MXEIO_Exit();
 
-return 0;
+    return 0;
 }
