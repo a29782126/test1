@@ -1,0 +1,157 @@
+[2021-03-29 11:24:04.160] [exthost] [info] extension host started
+[2021-03-29 11:24:04.267] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false,"extensionId":{"value":"ms-vscode.cpptools","_lower":"ms-vscode.cpptools"},"activationEvent":"onLanguage:cpp"}
+[2021-03-29 11:24:04.268] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.3.0-insiders/dist/main
+[2021-03-29 11:24:04.524] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-03-29 11:24:04.525] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/debug-auto-launch/dist/extension
+[2021-03-29 11:24:04.547] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-03-29 11:24:04.548] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/git/dist/main
+[2021-03-29 11:24:05.544] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-03-29 11:24:05.545] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/github/dist/extension.js
+[2021-03-29 11:24:05.692] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cmake-tools {"startup":true,"extensionId":{"value":"ms-vscode.cmake-tools","_lower":"ms-vscode.cmake-tools"},"activationEvent":"workspaceContains:**/CMakeLists.txt"}
+[2021-03-29 11:24:05.692] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/extensions/ms-vscode.cmake-tools-1.6.0/dist/main
+[2021-03-29 11:24:06.603] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-03-29 11:24:06.603] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/ms-vscode.js-debug/src/extension.js
+[2021-03-29 11:24:06.949] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:06.950] [exthost] [error] {"message":"Git error","stdout":"","stderr":"fatal: Pathspec '/home/soic/git_test/index.html' is in submodule 'git_test'\n","exitCode":128,"gitErrorCode":"IsInSubmodule"}
+[2021-03-29 11:24:08.643] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-03-29 11:24:08.644] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/emmet/dist/node/emmetNodeMain
+[2021-03-29 11:24:08.668] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-03-29 11:24:08.668] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/merge-conflict/dist/mergeConflictMain
+[2021-03-29 11:24:08.677] [exthost] [info] ExtensionService#_doActivateExtension vscode.testing-editor-contributions {"startup":false,"extensionId":{"value":"vscode.testing-editor-contributions","_lower":"vscode.testing-editor-contributions"},"activationEvent":"onStartupFinished"}
+[2021-03-29 11:24:08.677] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/soic/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/extensions/testing-editor-contributions/dist/extension.js
+[2021-03-29 11:24:08.679] [exthost] [info] eager extensions activated
+[2021-03-29 11:24:23.277] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 303
+[2021-03-29 11:24:28.444] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:33.616] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:38.789] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:43.963] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:49.144] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:54.318] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:24:59.499] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:04.681] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:09.881] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:15.079] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:20.240] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:25.404] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:30.576] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:35.792] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:40.960] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:46.125] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:51.303] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:25:56.477] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:01.654] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:06.833] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:12.003] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:17.317] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:22.571] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:27.780] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:33.153] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:38.322] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:43.486] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:48.655] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:53.876] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:26:59.069] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:04.262] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:08.031] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:09.437] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:14.618] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:19.795] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:24.964] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:30.133] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:35.300] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:40.467] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:45.636] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:50.822] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:27:55.992] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:01.162] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:06.370] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:11.540] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:16.705] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:21.885] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:27.057] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:32.224] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:37.393] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:42.564] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:47.731] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:52.909] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:28:58.670] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:03.835] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:09.026] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:14.198] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:19.363] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:24.531] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:29.699] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:34.852] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:40.003] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:45.160] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:50.325] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:29:55.497] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:00.637] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:05.777] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:08.759] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:10.917] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:16.063] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:21.203] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:26.353] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:31.504] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:36.646] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:41.789] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:46.936] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:52.084] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:30:57.227] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:02.367] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:07.520] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:12.663] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:17.802] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:22.940] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:28.086] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:33.232] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:38.375] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:43.518] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:48.663] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:53.803] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:31:58.941] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:04.091] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:09.234] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:14.373] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:19.513] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:24.671] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:29.819] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:34.965] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:40.109] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:32:45.260] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:42:40.941] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:42:41.514] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:42:46.092] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:42:51.241] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268
+[2021-03-29 11:42:56.374] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 268

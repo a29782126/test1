@@ -496,7 +496,7 @@ void CH_SUB_05(void *param)
 
     pstPara->ff.Enable_High_Current = (pstPara->ff.f11001_High_current_control && pstPara->ff.f11801_High_current_control);
     pstPara->ff.Enable_Dynamic_Control = (pstPara->ff.f11000_Dynamic_control && pstPara->ff.f11800_Dynamic_control);
-    pstPara->ff.Enable_High_Voltage = (pstPara->ff.f11802_High_voltage_control && pstPara->ff.f11802_High_voltage_control);
+    pstPara->ff.Enable_High_Voltage = (pstPara->ff.f11002_High_voltage_control && pstPara->ff.f11802_High_voltage_control);
 }
 
 void CH_SUB_06(void *param)

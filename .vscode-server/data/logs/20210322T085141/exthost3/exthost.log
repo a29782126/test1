@@ -102,3 +102,5 @@
 [2021-03-24 08:26:22.286] [exthost] [info] eager extensions activated
 [2021-03-24 10:08:37.704] [exthost] [error] [ms-vscode.cpptools] provider FAILED
 [2021-03-24 10:08:37.704] [exthost] [error] undefined
+[2021-03-24 18:19:22.707] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-03-24 18:19:23.847] [exthost] [info] exiting with code 0

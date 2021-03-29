@@ -42,3 +42,6 @@
 [2021-03-24 12:50:26.152] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
 [2021-03-24 13:05:30.130] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] The client has reconnected.
 [2021-03-24 13:05:30.174] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has reconnected.
+[2021-03-24 18:19:22.696] [remoteagent] [info] [::ffff:172.27.224.1][590e5df2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-03-24 18:19:23.923] [remoteagent] [info] [::ffff:172.27.224.1][aa89cb39][ExtensionHostConnection] <24891> Extension Host Process exited with code: 0, signal: null.
+[2021-03-24 18:19:23.923] [remoteagent] [info] Last EH closed, waiting before shutting down
