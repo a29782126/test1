@@ -17,3 +17,13 @@
 [2021-03-29 11:24:19.099] [remoteagent] [info] Renamed to /home/soic/.vscode-server/extensions/ms-vscode.cpptools-1.3.0-insiders2
 [2021-03-29 11:24:19.102] [remoteagent] [info] Installation completed. ms-vscode.cpptools
 [2021-03-29 11:24:19.116] [remoteagent] [info] Successfully installed the extension: ms-vscode.cpptools
+[2021-03-29 14:43:44.287] [remoteagent] [info] [::ffff:172.30.96.1][ae0837a9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-03-29 14:43:45.322] [remoteagent] [info] [::ffff:172.30.96.1][7c1aba18][ExtensionHostConnection] <67> Extension Host Process exited with code: 0, signal: null.
+[2021-03-29 14:43:45.322] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-03-29 14:43:45.639] [remoteagent] [info] [::ffff:172.30.96.1][3c2acde1][ExtensionHostConnection] New connection established.
+[2021-03-29 14:43:45.640] [remoteagent] [info] [::ffff:172.30.96.1][cd30cc55][ManagementConnection] New connection established.
+[2021-03-29 14:43:45.661] [remoteagent] [info] [::ffff:172.30.96.1][3c2acde1][ExtensionHostConnection] <12160> Launched Extension Host Process.
+[2021-03-29 14:43:45.678] [remoteagent] [info] Terminal layout retrieved: [1,1]
+[2021-03-29 14:43:45.830] [remoteagent] [info] Replaying 816 chars and 10 size events.
+[2021-03-29 14:43:45.830] [remoteagent] [info] Replaying 6440 chars and 6 size events.
+[2021-03-29 14:48:45.324] [remoteagent] [info] New EH opened, aborting shutdown

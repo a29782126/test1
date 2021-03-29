@@ -37,7 +37,6 @@ int main()
     /* //擷取程式起始時間
     start = get_now_time();
     usleep(990000);*/
-
     /*for (int i = 0; i < 100; i++)
     {
         //擷取目前時間
@@ -68,11 +67,7 @@ int main()
     //變數宣告
     bool abnormal = false;
     int fd1, fd2;
-    //	int MAX_TIME;
-    //	int I_SetValue;
-    //	int waiting_counts,
-    //	int counts_c1, counts_c2, counts_v;
-    //	bool TimeOutCheck, TimeComplianceCheck;
+
     bool echo = true;
     DWORD reside_time;
     double V_command_tmp;
@@ -107,6 +102,7 @@ int main()
     //擷取程式起始時間
     start = get_now_time();
     usleep(990000);
+
     while (main_thread_enable)
     {
 
@@ -119,6 +115,7 @@ int main()
         /* CANParaC.tt.now_time = GetTickCount();
         CANParaC.tt.OP_time = (CANParaC.tt.now_time - CANParaC.tt.start_time) / 10;
         CANParaC.charging_step = CANParaC.next_step;*/
+
         DI_Read;
         get_check_time;
 
@@ -151,10 +148,11 @@ int main()
             tmp = 0;
 
         CANParaC.PRE_I = tmp;
-
         CANParaC.ff.stop_is_pushed = ((CANParaC.DIO.DIdata[STOP_Button] == DI_ON) || CANParaC.ff.stop_is_pushed);
         CANParaC.ff.emeg_is_pushed = ((CANParaC.DIO.DIdata[Emeg_Stop] == DI_ON) || CANParaC.ff.emeg_is_pushed);
-
+    }
+}
+/*
 #pragma region Main flow
         switch (CANParaC.charging_step)
         {
@@ -1128,3 +1126,4 @@ int main()
 
     return 0;
 }
+*/

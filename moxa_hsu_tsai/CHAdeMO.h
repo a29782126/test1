@@ -413,7 +413,7 @@ void *CH_SUB_01(void *param)
         {
             if (pstPara->CHG_MX <= pstPara->LIMIT_V)
             {
-                pstPara->LIMIT_VOLT = min(pstPara->CHG_MX, pstPara->LIMIT_V); //( pstPara->CHG_MX, pstPara->LIMIT_V)
+                pstPara->LIMIT_VOLT = min(pstPara->CHG_MX, pstPara->LIMIT_V); 
                 printf("CHG_MX = %d.\r\n", pstPara->CHG_MX);
                 printf("LIMIT_VOLT = %d.\r\n", pstPara->LIMIT_VOLT);
 

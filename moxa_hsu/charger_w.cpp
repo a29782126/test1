@@ -38,7 +38,7 @@ int main()
     start = get_now_time();
     usleep(990000);
 
- for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 100; i++)
     {
         //擷取目前時間
         end = get_now_time();
@@ -60,7 +60,7 @@ int main()
         AllPara.do_state[3] = do_tmp;
 
         AllPara.io1242_do = AllPara.do_state[0] + AllPara.do_state[1] * 2 + AllPara.do_state[2] * 4 + AllPara.do_state[3] * 8;
-
+        printf(" DO: %d\n", AllPara.io1242_do);
         usleep(990000);
     }
 
